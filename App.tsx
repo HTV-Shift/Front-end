@@ -1,21 +1,42 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { AddEmployeeButton } from './components/AddEmployeeButton';
+import styled from 'styled-components/native';
+import { EmployeeCard } from './components/EmployeeCard';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Container>
+      <EmployeeSection>
+        <EmployeeCard></EmployeeCard>
+      </EmployeeSection>
+      <DayScheduleSection>
+      </DayScheduleSection>
+      
+    </Container>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+const EmployeeSection = styled.View`
+border: solid black 1px;
+height: 100%;
+width: 30%;
+`;
+
+const DayScheduleSection = styled.View`
+border: solid black 1px;
+height: 100%;
+width: 70%;
+`;
+
+
+const Container = styled.View`
+  flex-direction: row;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: solid pink 2px;
+`;
