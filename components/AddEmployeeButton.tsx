@@ -2,7 +2,15 @@ import * as React from 'react';
 import styled from 'styled-components/native';
 
 
-export const AddEmployeeButton: React.FC = () => (<Outline>
+export interface IAddEmployeeButtonProps {
+    onPress: () => void;
+}
+
+export const AddEmployeeButton: React.FC<IAddEmployeeButtonProps> = ({
+    onPress,
+    ...props
+}) => (
+<Outline onPress={onPress} {...props}>
     <Title>Add Employee</Title>
 </Outline>)
     

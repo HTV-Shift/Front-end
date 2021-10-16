@@ -1,8 +1,17 @@
 import * as React from 'react';
 import styled from 'styled-components/native';
 
-export const EmployeeCard: React.FC = () => (
-    <Card>
+export interface IEmployeeCardProps {
+    onPress?: () => void;
+    isDisabled?: boolean;
+}
+
+export const EmployeeCard: React.FC<IEmployeeCardProps> = ({
+    onPress,
+    isDisabled = true,
+    ...props
+}) => (
+    <Card onPress={onPress} disabled={isDisabled} {...props}>
         <InnerContainer>
             <PictureContainer>
                 <AvatarBorder>AA</AvatarBorder>
@@ -17,7 +26,6 @@ export const EmployeeCard: React.FC = () => (
 
 
 const Card = styled.TouchableOpacity`
-    border: solid grey 1px;
     flex-direction: column;
 `;
 
@@ -28,11 +36,11 @@ const InnerContainer = styled.View`
 
 const PictureContainer = styled.View`
     flex-direction: row;
-    width: 20%;
+    width: 30%;
 `;
 const TextContainer = styled.View`
     flex-direction: column;
-    width: 80%;
+    width: 70%;
     padding-left: 12px;
 `; 
 
