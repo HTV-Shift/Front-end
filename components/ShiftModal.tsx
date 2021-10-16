@@ -25,20 +25,16 @@ export const ShiftModal: React.FC = () => {
         <OuterView>
           <UpperContainer>
               <Text>Name:</Text>
+              <NameInputContainer>
+              <NameInput/>
+              </NameInputContainer>
           </UpperContainer>
           <MiddleContainer>
-          <DropDownPicker
-            open={open}
-            value={value}
-            items={items}
-            setOpen={setOpen}
-            setValue={setValue}
-            setItems={setItems}
-            />
-          </MiddleContainer>
           <Close onPress={() => setModalVisible(false)}>
-        <Text>Hide Modal</Text>
+        <Text>Submit</Text>
         </Close>
+          </MiddleContainer>
+          
         </OuterView>
       </Modal>
       </>
@@ -49,8 +45,8 @@ export const ShiftModal: React.FC = () => {
 const OuterView = styled.View`
     flex-direction: column;
     background-color: white;
-    height: 70%;
-    width: 60%;
+    height: 15%;
+    width: 30%;
     border-radius: 20px;
     margin: auto;
     border: solid grey 3px;
@@ -61,7 +57,6 @@ const UpperContainer = styled.View`
     margin: auto;
     padding: 10px;
     justify-content: center;
-    border: solid black 1px;
 `;
 
 const MiddleContainer = styled.View`
@@ -69,11 +64,19 @@ const MiddleContainer = styled.View`
     margin: auto;
     padding: 10px;
     justify-content: center;
-    border: solid black 1px;
     width: 100%;
 `;
 
 const NameField = styled.Text`
 margin: auto;`;
+
+const NameInputContainer = styled.View`
+    border:solid black 1px;
+    border-radius: 10px;
+`;
+
+const NameInput = styled.TextInput`
+border-radius: 10px;
+`;
 
 const Close =  styled.TouchableHighlight``;
