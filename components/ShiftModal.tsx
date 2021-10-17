@@ -12,12 +12,6 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 export const ShiftModal: React.FC = () => {
     const [isModalVisible, setModalVisible] = useState(false);
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState(null);
-    const [items, setItems] = useState([
-      {label: 'Apple', value: 'apple'},
-      {label: 'Banana', value: 'banana'}
-    ]);
     return(
         <>
     <AddEmployeeButton onPress={() => setModalVisible(true)}/>
